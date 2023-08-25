@@ -37,4 +37,14 @@ public class TopicController {
         model.addAttribute("newTopic", new Topic());
         return "addTopic";
     }
+
+    @PostMapping
+    public String postTopics(Topic newTopic, Model model) {
+
+        System.out.println(newTopic);
+
+        Topic savedTopic = topicService.addNewTopic(newTopic);
+        model.addAttribute("newTopic", savedTopic);
+        return "topic";
+    }
 }

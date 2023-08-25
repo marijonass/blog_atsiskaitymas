@@ -19,4 +19,7 @@ public class TopicService {
     public Topic getTopic(Long id) {
         return topicRepository.findById(id).get();
     }
+    public Topic addNewTopic(Topic newTopic) {
+        return topicRepository.save(newTopic);
+    }
 }
